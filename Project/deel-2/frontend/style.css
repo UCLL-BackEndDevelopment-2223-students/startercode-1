@@ -1,0 +1,89 @@
+html {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #333;
+}
+
+body {
+    background-color: #EEE;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+table th {
+    text-align: left;
+
+}
+
+table th,
+table td {
+    padding: 0 20px 10px 0px;
+}
+
+article ul li {
+    margin: 20px;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    background-color: #333;
+    padding: 0;
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width: 400px) {
+    header nav ul {
+
+        flex-direction: column;
+    }
+}
+
+header nav ul li {
+    width: 100%;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #CCC;
+    display: block;
+    padding: 20px;
+    text-align: center;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+}
+
+header nav ul li a:hover {
+    background-color: #CCC;
+    color: #333;
+}
+
+header nav ul li#actual a {
+    background-color: #CCC;
+    color: #333;
+}
+
+form label {
+    margin-bottom: 10px;
+}
+
+form input {
+    margin-bottom: 25px;
+}
+
+form input,
+form label {
+    display: block;
+}
+
+
+form label[for="inColor"],
+form input[type="checkbox"] {
+    display: inline;
+}
+
+p#message {
+    color: hsl(99, 30%, 30%);
+}

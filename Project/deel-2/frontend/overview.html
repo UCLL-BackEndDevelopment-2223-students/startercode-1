@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Books - view all</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="dom.js" defer></script>
+    <script src="book.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>My Library</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li id="actual"><a href="overview.html">All Books</a></li>
+                <li><a href="addBook.html">Add a Book</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h2>All books</h2>
+            <p id="message"></p>
+            <p>Filter books on (no combination of filters) </p>
+            <ul>
+                <li><label for="price">price (higher then)</label>
+                    <input type="text" id="price">
+                    <button id="filterPrice">Filter</button>
+                </li>
+                <li><label for="title">title (exact match)</label> <input type="text" id="title">
+                    <button id="filterTitle">Filter</button>
+
+                </li>
+                <li><label for="color">color </label> <input type="checkbox" id="color">
+                </li>
+
+            </ul>
+            <p><button id="reset">Reset filter</button></p>
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Number in Stock</th>
+                        <th>Price (€)</th>
+                        <th>Price ($)</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="booksTableBody"></tbody>
+            </table>
+        </article>
+        <article>
+            <h2>Some statistics</h2>
+            <ul>
+                <li>The most expensive book is <span id="mostExpensive"></span></li>
+                <li>The total value of the collection is <span id="totalValue"></span></li>
+            </ul>
+
+        </article>
+    </main>
+</body>
+
+</html>
