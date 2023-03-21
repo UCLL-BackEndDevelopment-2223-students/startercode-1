@@ -107,7 +107,7 @@ class UserTest {
     // unhappy case
     // invalid email (no @)
     @Test
-    void givenInvalidEmailNoAt_whenCreatingUser_thenUserIsCreatedWithEmailNull() {
+    void givenInvalidEmailNoAt_whenCreatingUser_thenEmailViolationMessageIsThrown() {
         // when
         User elke = new User(validNameElke, validAgeElke, "elke.steegmans.ucll.be", validPasswordElke);
 
@@ -128,7 +128,7 @@ class UserTest {
      * - https://www.tabnine.com/code/java/classes/org.hibernate.validator.Pattern
      **/
     @Test
-    void givenInvalidPasswordWhiteSpaces_whenCreatingUser_thenUserIsCreatedWithDefaultPasswordt() {
+    void givenInvalidPasswordWhiteSpaces_whenCreatingUser_thenPasswordViolationMessageIsThrown() {
         // when
         User elke = new User(validNameElke, validAgeElke, validEmailElke, "    1lke   ");
 
@@ -149,7 +149,7 @@ class UserTest {
      * - https://www.tabnine.com/code/java/classes/org.hibernate.validator.Pattern
      **/
     @Test
-    void givenInvalidPasswordNoDigit_whenCreatingUser_thenUserIsCreatedWithDefaultPasswordt() {
+    void givenInvalidPasswordNoDigit_whenCreatingUser_thenPasswordViolationMessageIsThrown() {
         // when
         User elke = new User(validNameElke, validAgeElke, validEmailElke, "elkeelke");
 
@@ -170,7 +170,7 @@ class UserTest {
      * - https://www.tabnine.com/code/java/classes/org.hibernate.validator.Pattern
      **/
     @Test
-    void givenInvalidPasswordNotMin8Chars_whenCreatingUser_thenUserIsCreatedWithDefaultPasswordt() {
+    void givenInvalidPasswordNotMin8Chars_whenCreatingUser_thenPasswordViolationMessageIsThrown() {
         // when
         User elke = new User(validNameElke, validAgeElke, validEmailElke, "el2elke");
 
@@ -191,7 +191,7 @@ class UserTest {
      * - https://www.tabnine.com/code/java/classes/org.hibernate.validator.Pattern
      **/
     @Test
-    void givenInvalidPasswordNotMin8CharsAndNoDigit_whenCreatingUser_thenUserIsCreatedWithDefaultPasswordt() {
+    void givenInvalidPasswordNotMin8CharsAndNoDigit_whenCreatingUser_thenPasswordViolationMessageIsThrown() {
         // when
         User elke = new User(validNameElke, validAgeElke, validEmailElke, "elelke");
 
