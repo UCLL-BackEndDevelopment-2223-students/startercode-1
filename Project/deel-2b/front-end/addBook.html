@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Books - Add</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="dom.js" defer></script>
+        <script src="addBook.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>My Library</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="overview.html">All Books</a></li>
+                    <li id="actual"><a href="addBook.html">Add a Book</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <h2>Add a book</h2>
+                <form id="addBook" method="post">
+                    <label for="title">Title</label
+                    ><input type="text" id="title" />
+                    <div id="title-error" class="error"></div>
+                    <label for="numberInStock">Number in stock</label
+                    ><input type="number" id="numberInStock" />
+                    <div id="numberInStock-error" class="error"></div>
+                    <label for="price">Price</label
+                    ><input type="number" id="price" />
+                    <div id="price-error" class="error"></div>
+                    <input type="checkbox" id="inColor" /><label for="inColor"
+                        >In color</label
+                    >
+                    <input
+                        type="submit"
+                        id="submit"
+                        value="Add Book"
+                        aria-label="Add book"
+                    />
+                </form>
+                <div id="status"></div>
+            </article>
+        </main>
+    </body>
+</html>
