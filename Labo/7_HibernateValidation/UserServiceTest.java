@@ -188,7 +188,6 @@ class UserServiceTest {
     void given4Users_whenRemoveExistingUser_thenUserIsRemovedAndRemovedUserIsReturned() throws ServiceException {
         //given
         when(userRepository.findUserByEmail("yuki@ucll.be")).thenReturn(yuki);
-        when(userRepository.deleteByEmail("yuki@ucll.be")).thenReturn(yuki);
 
         //when
         User removedUser = userService.removeUser("yuki@ucll.be");
