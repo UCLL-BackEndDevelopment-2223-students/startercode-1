@@ -166,7 +166,7 @@ public class BookServiceTestJPAWithValidation {
         ServiceException ex = Assertions.assertThrows(ServiceException.class,
                 () -> service.getBooksWithPriceMoreThan(Integer.MIN_VALUE));
         // then
-        assertEquals(ex.getField(), "price-filter");
+        assertEquals("price-filter", ex.getField());
         assertEquals("Price must be a non-negative number", ex.getMessage());
 
     }

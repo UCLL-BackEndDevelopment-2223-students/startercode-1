@@ -104,13 +104,13 @@ public class BookTest {
 
     // number in Stock out of range
     @Test
-    public void givenNumberInStockLessThan1_whenCreatingBook_thenTitleViolationMessageIsThrown() {
+    public void givenNumberInStockLessThan1_whenCreatingBook_thenNumberInStockViolationMessageIsThrown() {
         // when
         int invalidValue = 0;
         Book book = new Book(validTitle, invalidValue, validPrice);
         // then
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
-        assertEquals(violations.size(), 1);
+        assertEquals(1, violations.size());
         ConstraintViolation<Book> violation = violations.iterator().next();
         assertEquals("Number in stock must be between 1 and 5", violation.getMessage());
         assertEquals("numberInStock", violation.getPropertyPath().toString());
@@ -118,13 +118,13 @@ public class BookTest {
     }
 
     @Test
-    public void givenNumberInStockMoreThan5_whenCreatingBook_thenTitleViolationMessageIsThrown() {
+    public void givenNumberInStockMoreThan5_whenCreatingBook_thenNumberInStockViolationMessageIsThrown() {
         // when
         int invalidValue = 10;
         Book book = new Book(validTitle, invalidValue, validPrice);
         // then
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
-        assertEquals(violations.size(), 1);
+        assertEquals(1, violations.size());
         ConstraintViolation<Book> violation = violations.iterator().next();
         assertEquals("Number in stock must be between 1 and 5", violation.getMessage());
         assertEquals("numberInStock", violation.getPropertyPath().toString());
@@ -133,13 +133,13 @@ public class BookTest {
 
     // negative price
     @Test
-    public void givenNegativePrice_whenCreatingBook_thenTitleViolationMessageIsThrown() {
+    public void givenNegativePrice_whenCreatingBook_thenPriceViolationMessageIsThrown() {
         // when
         double invalidValue = -10;
         Book book = new Book(validTitle, validNumberInStock, invalidValue);
         // then
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
-        assertEquals(violations.size(), 1);
+        assertEquals(1, violations.size());
         ConstraintViolation<Book> violation = violations.iterator().next();
         assertEquals("Price must be positive", violation.getMessage());
         assertEquals("price", violation.getPropertyPath().toString());
